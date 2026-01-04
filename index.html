@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Beauty Studio - Beauty Salon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #f8e8f0;
+            --secondary-color: #f5f0f8;
+            --accent-color: #d4a5b8;
+            --accent-dark: #c895a8;
+            --text-color: #6b6b6b;
+            --text-dark: #2c2c2c;
+            --white: #ffffff;
+            --gold: #e8c5a0;
+            --spacing: 2rem;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .language-toggle {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--white);
+            padding: 0.4rem;
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .language-toggle button {
+            background: transparent;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .language-toggle button.active {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .language-toggle button:hover {
+            background: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #fff5f7 0%, #f8e8f0 50%, #f5f0f8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 165, 184, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(232, 197, 160, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 300;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .services-preview {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .service-tag {
+            padding: 1rem 2.5rem;
+            background: var(--white);
+            border-radius: 50px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .service-tag:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(212, 165, 184, 0.2);
+        }
+
+        .cta-button {
+            margin-top: 2rem;
+            padding: 1.4rem 4rem;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 165, 184, 0.3);
+            font-weight: 500;
+            letter-spacing: 1px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 165, 184, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin-top: 2.5rem;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3.5rem 2.5rem;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 165, 184, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 50px rgba(212, 165, 184, 0.2);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            filter: drop-shadow(0 4px 10px rgba(212, 165, 184, 0.3));
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+        }
+
+        .service-card p {
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* Advantages Section */
+        .advantages {
+            background: linear-gradient(135deg, #fafafa 0%, #fff5f7 50%, #f5f0f8 100%);
+            position: relative;
+        }
+
+        .advantages::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(212, 165, 184, 0.15);
+        }
+
+        .advantage-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            filter: drop-shadow(0 4px 10px rgba(212, 165, 184, 0.3));
+        }
+
+        .advantage-item h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .advantage-item p {
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 5rem;
+        }
+
+        .about-text {
+            padding: 2rem 0;
+        }
+
+        .about-text h3 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            color: var(--text-color);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            aspect-ratio: 4/5;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: var(--white);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: linear-gradient(135deg, #fff5f7 0%, #f8e8f0 50%, #fafafa 100%);
+            position: relative;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 5rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-item::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 3rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .gallery-item:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(212, 165, 184, 0.3);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+            background: linear-gradient(135deg, #d4a5b8 0%, #c895a8 50%, #e8c5a0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        /* Contacts Section */
+        .contacts-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-top: 5rem;
+        }
+
+        .contact-info {
+            padding: 1rem 0;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 35px rgba(212, 165, 184, 0.15);
+        }
+
+        .contact-item h4 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-item p {
+            color: var(--text-color);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .contact-form {
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 25px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            font-weight: 300;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid var(--secondary-color);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(212, 165, 184, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.3rem;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 165, 184, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.4rem;
+            }
+
+            .about-content,
+            .contacts-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            section {
+                padding: 5rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .services-preview {
+                gap: 1rem;
+            }
+
+            .service-tag {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 1.2rem 3rem;
+                font-size: 1rem;
+            }
+
+            .services-grid,
+            .advantages-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(212, 165, 184, 0.3);
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(212, 165, 184, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" data-en="Luna Beauty Studio" data-ua="Luna Beauty Studio">Luna Beauty Studio</a>
+            <ul class="nav-links">
+                <li><a href="#services" data-en="Services" data-ua="Послуги">Services</a></li>
+                <li><a href="#about" data-en="About" data-ua="Про нас">About</a></li>
+                <li><a href="#gallery" data-en="Gallery" data-ua="Галерея">Gallery</a></li>
+                <li><a href="#contacts" data-en="Contacts" data-ua="Контакти">Contacts</a></li>
+            </ul>
+            <div class="language-toggle">
+                <button id="lang-en" class="active" onclick="switchLanguage('en')">EN</button>
+                <button id="lang-ua" onclick="switchLanguage('ua')">UA</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-en="Luna Beauty Studio" data-ua="Luna Beauty Studio">Luna Beauty Studio</h1>
+            <div class="subtitle" data-en="Manicure · Pedicure · Care" data-ua="Манікюр · Педікюр · Догляд">Manicure · Pedicure · Care</div>
+            <div class="services-preview">
+                <span class="service-tag" data-en="Manicure" data-ua="Манікюр">Manicure</span>
+                <span class="service-tag" data-en="Pedicure" data-ua="Педікюр">Pedicure</span>
+                <span class="service-tag" data-en="Care" data-ua="Догляд">Care</span>
+            </div>
+            <button class="cta-button" data-en="Book Appointment" data-ua="Записатись" onclick="scrollToContacts()">Book Appointment</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title" data-en="Our Services" data-ua="Наші послуги">Our Services</h2>
+        <p class="section-subtitle" data-en="Professional beauty services tailored to your needs" data-ua="Професійні послуги краси, адаптовані під ваші потреби">Professional beauty services tailored to your needs</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💅</div>
+                <h3 data-en="Manicure" data-ua="Манікюр">Manicure</h3>
+                <p data-en="Professional nail care and shaping for beautiful, healthy hands. We use premium products and the latest techniques." data-ua="Професійний догляд за нігтями та формування для красивих, здорових рук. Використовуємо преміум продукти та найновіші техніки.">Professional nail care and shaping for beautiful, healthy hands. We use premium products and the latest techniques.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🦶</div>
+                <h3 data-en="Pedicure" data-ua="Педікюр">Pedicure</h3>
+                <p data-en="Complete foot care and nail treatment for soft, smooth feet. Relaxing treatments that leave your feet feeling refreshed." data-ua="Повний догляд за стопами та обробка нігтів для м'яких, гладеньких ніг. Розслаблюючі процедури, які залишають ваші ноги свіжими.">Complete foot care and nail treatment for soft, smooth feet. Relaxing treatments that leave your feet feeling refreshed.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3 data-en="Nail Design" data-ua="Дизайн нігтів">Nail Design</h3>
+                <p data-en="Creative and artistic nail designs to express your unique style. From classic elegance to bold modern trends." data-ua="Креативні та художні дизайни нігтів для вираження вашого унікального стилю. Від класичної елегантності до сміливих сучасних трендів.">Creative and artistic nail designs to express your unique style. From classic elegance to bold modern trends.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌸</div>
+                <h3 data-en="Hand Care" data-ua="Догляд за руками">Hand Care</h3>
+                <p data-en="Nourishing treatments and massages for soft, rejuvenated hands. Restore moisture and maintain youthful skin." data-ua="Поживні процедури та масажі для м'яких, оновлених рук. Відновіть вологість та підтримуйте молодість шкіри.">Nourishing treatments and massages for soft, rejuvenated hands. Restore moisture and maintain youthful skin.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="advantages">
+        <h2 class="section-title" data-en="Why Choose Us" data-ua="Чому обирають нас">Why Choose Us</h2>
+        <p class="section-subtitle" data-en="Experience the difference of professional care" data-ua="Відчуйте різницю професійного догляду">Experience the difference of professional care</p>
+        <div class="advantages-grid">
+            <div class="advantage-item">
+                <div class="advantage-icon">⭐</div>
+                <h3 data-en="Premium Quality" data-ua="Преміум якість">Premium Quality</h3>
+                <p data-en="We use only the highest quality products and professional techniques. Every service is performed with attention to detail and care." data-ua="Ми використовуємо лише найвищу якість продуктів та професійні техніки. Кожна послуга виконується з увагою до деталей та доглядом.">We use only the highest quality products and professional techniques. Every service is performed with attention to detail and care.</p>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">❤️</div>
+                <h3 data-en="Individual Approach" data-ua="Індивідуальний підхід">Individual Approach</h3>
+                <p data-en="Each client receives personalized attention and customized treatments. We listen to your needs and create the perfect solution for you." data-ua="Кожен клієнт отримує персональну увагу та індивідуальні процедури. Ми слухаємо ваші потреби та створюємо ідеальне рішення для вас.">Each client receives personalized attention and customized treatments. We listen to your needs and create the perfect solution for you.</p>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon">🌟</div>
+                <h3 data-en="Experienced Master" data-ua="Досвідчений майстер">Experienced Master</h3>
+                <p data-en="Years of experience and continuous training ensure excellent results. Stay updated with the latest trends and techniques in beauty care." data-ua="Роки досвіду та постійне навчання забезпечують відмінні результати. Залишаємося в курсі останніх трендів та технік у догляді за красою.">Years of experience and continuous training ensure excellent results. Stay updated with the latest trends and techniques in beauty care.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title" data-en="About the Master" data-ua="Про майстра">About the Master</h2>
+        <p class="section-subtitle" data-en="Meet the artist behind your beauty transformation" data-ua="Познайомтеся з митцем вашої трансформації краси">Meet the artist behind your beauty transformation</p>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 data-en="Welcome to Luna Beauty Studio" data-ua="Ласкаво просимо до Luna Beauty Studio">Welcome to Luna Beauty Studio</h3>
+                <p data-en="With over 5 years of experience in the beauty industry, I am passionate about helping you look and feel your best. My approach combines professional expertise with a warm, welcoming atmosphere where every client feels special." data-ua="Маючи понад 5 років досвіду в індустрії краси, я з пристрастю допомагаю вам виглядати та почуватися найкраще. Мій підхід поєднує професійну експертизу з теплою, привітною атмосферою, де кожен клієнт почувається особливим.">With over 5 years of experience in the beauty industry, I am passionate about helping you look and feel your best. My approach combines professional expertise with a warm, welcoming atmosphere where every client feels special.</p>
+                <p data-en="I continuously update my skills and stay current with the latest trends and techniques in nail art and beauty care. Your satisfaction and comfort are my top priorities. Every visit is an opportunity to create something beautiful together." data-ua="Я постійно оновлюю свої навички та залишаюся в курсі останніх трендів та технік у нігтьовому мистецтві та догляді за красою. Ваше задоволення та комфорт - мої найвищі пріоритети. Кожен візит - це можливість разом створити щось прекрасне.">I continuously update my skills and stay current with the latest trends and techniques in nail art and beauty care. Your satisfaction and comfort are my top priorities. Every visit is an opportunity to create something beautiful together.</p>
+            </div>
+            <div class="about-image-wrapper">
+                <!-- Replace this with your photo: <img src="images/master.jpg" alt="Master"> -->
+                <div class="about-image">👩‍💼</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <h2 class="section-title" data-en="Gallery" data-ua="Галерея">Gallery</h2>
+        <p class="section-subtitle" data-en="Explore our work and get inspired" data-ua="Перегляньте наші роботи та надихніться">Explore our work and get inspired</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/gallery-1.jpg" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery-2.jpg" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery-3.jpg" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery-4.jpg" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery-5.jpg" alt="Gallery Image 5">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery-6.jpg" alt="Gallery Image 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contacts">
+        <h2 class="section-title" data-en="Contact Us" data-ua="Контакти">Contact Us</h2>
+        <p class="section-subtitle" data-en="Get in touch and book your appointment" data-ua="Зв'яжіться з нами та забронюйте прийом">Get in touch and book your appointment</p>
+        <div class="contacts-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>📞 <span data-en="Phone" data-ua="Телефон">Phone</span></h4>
+                    <p>+380 (XX) XXX XX XX</p>
+                </div>
+                <div class="contact-item">
+                    <h4>✉️ <span data-en="Email" data-ua="Електронна пошта">Email</span></h4>
+                    <p>info@lunabeautystudio.com</p>
+                </div>
+                <div class="contact-item">
+                    <h4>📍 <span data-en="Address" data-ua="Адреса">Address</span></h4>
+                    <p data-en="Your address here" data-ua="Ваша адреса тут">Your address here</p>
+                </div>
+                <div class="contact-item">
+                    <h4>🕒 <span data-en="Working Hours" data-ua="Години роботи">Working Hours</span></h4>
+                    <p data-en="Mon - Sat: 10:00 - 19:00<br>Sun: Closed" data-ua="Пн - Сб: 10:00 - 19:00<br>Нд: Вихідний">Mon - Sat: 10:00 - 19:00<br>Sun: Closed</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3 data-en="Book an Appointment" data-ua="Записатись на прийом">Book an Appointment</h3>
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label data-en="Name" data-ua="Ім'я">Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Phone" data-ua="Телефон">Phone</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Service" data-ua="Послуга">Service</label>
+                        <select required>
+                            <option value="" data-en="Select a service" data-ua="Виберіть послугу">Select a service</option>
+                            <option value="manicure" data-en="Manicure" data-ua="Манікюр">Manicure</option>
+                            <option value="pedicure" data-en="Pedicure" data-ua="Педікюр">Pedicure</option>
+                            <option value="nail-design" data-en="Nail Design" data-ua="Дизайн нігтів">Nail Design</option>
+                            <option value="hand-care" data-en="Hand Care" data-ua="Догляд за руками">Hand Care</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Message" data-ua="Повідомлення">Message</label>
+                        <textarea></textarea>
+                    </div>
+                    <button type="submit" class="submit-button" data-en="Send" data-ua="Відправити">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p data-en="© 2024 Luna Beauty Studio. All rights reserved." data-ua="© 2024 Luna Beauty Studio. Всі права захищені.">© 2024 Luna Beauty Studio. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" onclick="scrollToTop()" aria-label="Scroll to top">↑</button>
+
+    <script>
+        let currentLanguage = 'en';
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            // Show/hide scroll to top button
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.scrollY > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update active button
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('lang-ua').classList.toggle('active', lang === 'ua');
+            
+            // Update all elements with data attributes
+            document.querySelectorAll('[data-en][data-ua]').forEach(element => {
+                const text = lang === 'en' ? element.getAttribute('data-en') : element.getAttribute('data-ua');
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' || element.tagName === 'SELECT' || element.tagName === 'OPTION') {
+                    if (element.type === 'submit' || element.type === 'button') {
+                        element.value = text;
+                    } else if (element.tagName === 'OPTION') {
+                        element.textContent = text;
+                    } else {
+                        element.placeholder = text;
+                    }
+                } else {
+                    element.textContent = text;
+                }
+            });
+
+            // Update select options
+            document.querySelectorAll('select option').forEach(option => {
+                if (option.hasAttribute('data-en') && option.hasAttribute('data-ua')) {
+                    const text = lang === 'en' ? option.getAttribute('data-en') : option.getAttribute('data-ua');
+                    option.textContent = text;
+                }
+            });
+        }
+
+        function scrollToContacts() {
+            document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert(currentLanguage === 'en' 
+                ? 'Thank you! We will contact you soon.' 
+                : 'Дякуємо! Ми зв\'яжемося з вами найближчим часом.');
+            event.target.reset();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Gallery lightbox (simple version - can be enhanced)
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Add lightbox functionality here if needed
+                console.log('Gallery item clicked');
+            });
+        });
+    </script>
+</body>
+</html>
