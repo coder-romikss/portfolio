@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Coffee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo-wrapper">
+                <div class="logo-box">
+                    <span class="logo-text">UC</span>
+                </div>
+                <span class="logo-subtitle">URBAN COFFEE</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#about" class="nav-item">Про нас</a>
+                <a href="#menu" class="nav-item">Меню</a>
+                <a href="#gallery" class="nav-item">Галерея</a>
+                <a href="#contact" class="nav-item nav-cta">Контакти</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero - Split Layout -->
+    <section class="hero-split">
+        <div class="hero-left">
+            <div class="hero-content">
+                <div class="hero-badge">СВІЖА КАВА</div>
+                <h1 class="hero-title">
+                    <span class="title-big">FRESH</span>
+                    <span class="title-big">COFFEE</span>
+                </h1>
+                <div class="hero-tagline">COZY PLACE</div>
+                <p class="hero-desc">Міська кав'ярня з атмосферою та смаком. Кожна чашка - це маленький ритуал.</p>
+                <a href="#menu" class="btn-primary">
+                    <span>МЕНЮ</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-visual">
+                <img src="images/hero.jpg" alt="Coffee">
+                <div class="visual-decor decor-circle-1"></div>
+                <div class="visual-decor decor-circle-2"></div>
+                <div class="visual-decor decor-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About - Asymmetric Layout -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-visual">
+                <div class="about-img-wrapper">
+                    <img src="images/about.jpg" alt="About">
+                </div>
+                <div class="about-stat">
+                    <div class="stat-number">2018</div>
+                    <div class="stat-label">Рік заснування</div>
+                </div>
+            </div>
+            <div class="about-text-content">
+                <div class="section-label">ПРО НАС</div>
+                <h2 class="section-heading">Urban Coffee - це стиль життя</h2>
+                <div class="about-text">
+                    <p>Ми створили простір, де кава стає мистецтвом, а кожен візит - подією. Наші баристи майстерно готують кожну чашку, використовуючи преміум зерно з найкращих плантацій.</p>
+                    <p>Urban Coffee - це не просто кав'ярня. Це точка зустрічей, натхнення та нових ідей. Тут зручно працювати, зустрічатися з друзями або просто насолоджуватися моментом.</p>
+                </div>
+                <div class="about-features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-title">Преміум зерно</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-title">Досвідчені баристи</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✓</div>
+                        <div class="feature-title">Затишна атмосфера</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu - Card Grid with Large Typography -->
+    <section class="menu-section" id="menu">
+        <div class="menu-header">
+            <div class="menu-header-left">
+                <div class="section-label section-label-dark">МЕНЮ</div>
+                <h2 class="section-heading section-heading-dark">Наші напої</h2>
+            </div>
+            <div class="menu-filter">
+                <button class="filter-btn active" data-filter="all">ВСЕ</button>
+                <button class="filter-btn" data-filter="coffee">КАВА</button>
+                <button class="filter-btn" data-filter="tea">ЧАЙ</button>
+                <button class="filter-btn" data-filter="desserts">ДЕСЕРТИ</button>
+            </div>
+        </div>
+        <div class="menu-grid" id="menuGrid">
+            <!-- Coffee -->
+            <div class="menu-card" data-category="coffee">
+                <div class="menu-card-number">01</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Еспресо</h3>
+                    <p class="menu-item-desc">Інтенсивний класичний еспресо</p>
+                    <div class="menu-item-price">45 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">☕</div>
+                </div>
+            </div>
+            <div class="menu-card" data-category="coffee">
+                <div class="menu-card-number">02</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Капучино</h3>
+                    <p class="menu-item-desc">Еспресо з ніжною молочною піною</p>
+                    <div class="menu-item-price">65 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">☕</div>
+                </div>
+            </div>
+            <div class="menu-card" data-category="coffee">
+                <div class="menu-card-number">03</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Лате</h3>
+                    <p class="menu-item-desc">М'який смак з молоком</p>
+                    <div class="menu-item-price">70 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">☕</div>
+                </div>
+            </div>
+            <div class="menu-card" data-category="coffee">
+                <div class="menu-card-number">04</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Амерікано</h3>
+                    <p class="menu-item-desc">Еспресо з гарячою водою</p>
+                    <div class="menu-item-price">50 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">☕</div>
+                </div>
+            </div>
+            <div class="menu-card" data-category="coffee">
+                <div class="menu-card-number">05</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Флет Вайт</h3>
+                    <p class="menu-item-desc">Подвійний еспресо з мікро-піною</p>
+                    <div class="menu-item-price">75 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">☕</div>
+                </div>
+            </div>
+            <div class="menu-card" data-category="coffee">
+                <div class="menu-card-number">06</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Раф кава</h3>
+                    <p class="menu-item-desc">З вершками та ваніллю</p>
+                    <div class="menu-item-price">80 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">☕</div>
+                </div>
+            </div>
+            <!-- Tea -->
+            <div class="menu-card" data-category="tea" style="display: none;">
+                <div class="menu-card-number">07</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Зелений чай</h3>
+                    <p class="menu-item-desc">Преміум зелений чай</p>
+                    <div class="menu-item-price">55 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">🍵</div>
+                </div>
+            </div>
+            <div class="menu-card" data-category="tea" style="display: none;">
+                <div class="menu-card-number">08</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Чорний чай</h3>
+                    <p class="menu-item-desc">Насичений класичний чай</p>
+                    <div class="menu-item-price">50 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">🍵</div>
+                </div>
+            </div>
+            <div class="menu-card" data-category="tea" style="display: none;">
+                <div class="menu-card-number">09</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Фруктовий чай</h3>
+                    <p class="menu-item-desc">Освіжаючий з фруктовими нотами</p>
+                    <div class="menu-item-price">60 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">🍵</div>
+                </div>
+            </div>
+            <!-- Desserts -->
+            <div class="menu-card" data-category="desserts" style="display: none;">
+                <div class="menu-card-number">10</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Чізкейк</h3>
+                    <p class="menu-item-desc">Ніжний з ягідним соусом</p>
+                    <div class="menu-item-price">95 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">🍰</div>
+                </div>
+            </div>
+            <div class="menu-card" data-category="desserts" style="display: none;">
+                <div class="menu-card-number">11</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Круасани</h3>
+                    <p class="menu-item-desc">Французькі з начинками</p>
+                    <div class="menu-item-price">65 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">🥐</div>
+                </div>
+            </div>
+            <div class="menu-card" data-category="desserts" style="display: none;">
+                <div class="menu-card-number">12</div>
+                <div class="menu-card-content">
+                    <h3 class="menu-item-name">Печиво</h3>
+                    <p class="menu-item-desc">Домашнє з шоколадом</p>
+                    <div class="menu-item-price">45 ₴</div>
+                </div>
+                <div class="menu-card-img">
+                    <div class="img-placeholder-small">🍪</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery - Masonry Style -->
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <div class="section-label">ГАЛЕРЕЯ</div>
+                <h2 class="section-heading">Атмосфера</h2>
+            </div>
+            <div class="gallery-masonry">
+                <div class="gallery-item gallery-item-large">
+                    <div class="gallery-img">
+                        <img src="images/gallery-1.jpg" alt="Gallery" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <img src="images/gallery-2.jpg" alt="Gallery" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <img src="images/gallery-3.jpg" alt="Gallery" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <img src="images/gallery-4.jpg" alt="Gallery" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-tall">
+                    <div class="gallery-img">
+                        <img src="images/gallery-5.jpg" alt="Gallery" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-img">
+                        <img src="images/gallery-6.jpg" alt="Gallery" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact - Split Layout -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info-block">
+                <div class="section-label section-label-dark">КОНТАКТИ</div>
+                <h2 class="section-heading section-heading-dark">Знайдіть нас</h2>
+                <div class="contact-list">
+                    <div class="contact-row">
+                        <div class="contact-label">Адреса</div>
+                        <div class="contact-value">вул. Прикладна, 123<br>м. Київ, 01000</div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-label">Телефон</div>
+                        <div class="contact-value">+380 (XX) XXX XX XX</div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-label">Email</div>
+                        <div class="contact-value">info@urbancoffee.com</div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-label">Години</div>
+                        <div class="contact-value">Пн - Нд: 08:00 - 22:00</div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-map-block">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1066.957633327074!2d30.438584830308926!3d50.50315107013564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cdd2791d7dd9%3A0xe2e483f464e056a2!2z0JrQsNCyyrzRj9GA0L3Rjw!5e0!3m2!1sru!2sua!4v1767568594281!5m2!1sru!2sua" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; display: block;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">URBAN COFFEE</div>
+            <div class="footer-copyright">© 2024. Всі права захищені.</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
