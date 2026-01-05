@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="lang-en" class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+        <button id="lang-ua" class="lang-btn" onclick="switchLanguage('ua')">UA</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text" data-en="Portfolio" data-ua="Портфоліо">Portfolio</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link" data-en="Home" data-ua="Головна">Home</a></li>
+                <li><a href="#about" class="nav-link" data-en="About" data-ua="Про мене">About</a></li>
+                <li><a href="#skills" class="nav-link" data-en="Skills" data-ua="Навички">Skills</a></li>
+                <li><a href="#projects" class="nav-link" data-en="Projects" data-ua="Проєкти">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-en="Contact" data-ua="Контакти">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-greeting" data-en="Hello, I'm" data-ua="Привіт, я">Hello, I'm</div>
+            <h1 class="hero-name">
+                <span class="name-line">romikss</span>
+            </h1>
+            <div class="hero-title">
+                <span class="title-text" data-en="Web Developer" data-ua="Веб-розробник">Web Developer</span>
+                <span class="title-cursor">|</span>
+            </div>
+            <p class="hero-description" data-en="Creating beautiful and functional web experiences. Turning ideas into digital reality." data-ua="Створюю красиві та функціональні веб-досвіди. Перетворюю ідеї в цифрову реальність.">Creating beautiful and functional web experiences. Turning ideas into digital reality.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary" data-en="Get In Touch" data-ua="Зв'язатись">Get In Touch</a>
+                <a href="#projects" class="btn-secondary" data-en="View Work" data-ua="Переглянути роботи">View Work</a>
+            </div>
+            <div class="hero-social">
+                <a href="mailto:rgorb101@gmail.com" class="social-link" aria-label="Email">EM</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span data-en="Scroll" data-ua="Прокрутити">Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title" data-en="About Me" data-ua="Про мене">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro" data-en="I'm a passionate web developer who loves creating digital experiences that make a difference." data-ua="Я захоплений веб-розробник, який любить створювати цифрові досвіди, що роблять різницю.">I'm a passionate web developer who loves creating digital experiences that make a difference.</p>
+                    <p data-en="With expertise in modern web technologies, I transform complex ideas into clean, user-friendly interfaces. My approach combines technical excellence with creative design." data-ua="Маючи експертизу в сучасних веб-технологіях, я перетворюю складні ідеї на чисті, зручні інтерфейси. Мій підхід поєднує технічну досконалість з креативним дизайном.">With expertise in modern web technologies, I transform complex ideas into clean, user-friendly interfaces. My approach combines technical excellence with creative design.</p>
+                    <p data-en="When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the community." data-ua="Коли я не кодую, ви знайдете мене досліджуючим нові технології, сприяючим відкритим проектам або ділючимся знаннями зі спільнотою.">When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the community.</p>
+                </div>
+                <div class="about-image-wrapper">
+                    <div class="about-image">
+                        <img src="images/avatar.jpg" alt="romikss">
+                    </div>
+                    <div class="image-frame"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title" data-en="Skills & Technologies" data-ua="Навички та Технології">Skills & Technologies</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title" data-en="Frontend" data-ua="Frontend">Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Vue.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title" data-en="Backend" data-ua="Backend">Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PHP</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Database</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title" data-en="Tools" data-ua="Інструменти">Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Webpack</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title" data-en="Featured Projects" data-ua="Вибрані Проєкти">Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- Додайте скріншот: Завантажте скріншот сторінки в images/luna-beauty-preview.jpg -->
+                        <img 
+                            src="images/luna-beauty-preview.jpg" 
+                            alt="Luna Beauty Studio Preview" 
+                            class="project-screenshot"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="project-preview-fallback">
+                            <div class="fallback-content">
+                                <span class="fallback-icon">💅</span>
+                                <span class="fallback-text">Luna Beauty Studio</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://firstproject-nine-wine.vercel.app/" target="_blank" class="preview-link" data-en="View Full Site" data-ua="Переглянути сайт">View Full Site →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category" data-en="Beauty Salon" data-ua="Салон Краси">Beauty Salon</div>
+                        <h3 class="project-title" data-en="Luna Beauty Studio" data-ua="Luna Beauty Studio">Luna Beauty Studio</h3>
+                        <p class="project-description" data-en="Elegant landing page for a beauty salon with bilingual support and minimalistic design." data-ua="Елегантний лендінг для салону краси з підтримкою двох мов та мінімалістичним дизайном.">Elegant landing page for a beauty salon with bilingual support and minimalistic design.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://firstproject-nine-wine.vercel.app/" target="_blank" class="project-link" data-en="View Project" data-ua="Переглянути">View Project</a>
+                            <a href="https://firstproject-nine-wine.vercel.app/" target="_blank" class="project-link-icon">→</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- Додайте скріншот: Завантажте скріншот сторінки в images/urban-coffee-preview.jpg -->
+                        <img 
+                            src="images/urban-coffee-preview.jpg" 
+                            alt="Urban Coffee Preview" 
+                            class="project-screenshot"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="project-preview-fallback">
+                            <div class="fallback-content">
+                                <span class="fallback-icon">☕</span>
+                                <span class="fallback-text">Urban Coffee</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://secondsite-mu.vercel.app/" target="_blank" class="preview-link" data-en="View Full Site" data-ua="Переглянути сайт">View Full Site →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category" data-en="Cafe" data-ua="Кафе">Cafe</div>
+                        <h3 class="project-title" data-en="Urban Coffee" data-ua="Urban Coffee">Urban Coffee</h3>
+                        <p class="project-description" data-en="Modern urban-style cafe website with bold design and interactive menu filtering." data-ua="Сучасний сайт кафе в урбаністичному стилі з сміливим дизайном та інтерактивною фільтрацією меню.">Modern urban-style cafe website with bold design and interactive menu filtering.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://secondsite-mu.vercel.app/" target="_blank" class="project-link" data-en="View Project" data-ua="Переглянути">View Project</a>
+                            <a href="https://secondsite-mu.vercel.app/" target="_blank" class="project-link-icon">→</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <!-- Додайте скріншот: Завантажте скріншот сторінки в images/freshhome-preview.jpg -->
+                        <img 
+                            src="images/freshhome-preview.jpg" 
+                            alt="FreshHome Cleaning Preview" 
+                            class="project-screenshot"
+                            loading="lazy"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="project-preview-fallback">
+                            <div class="fallback-content">
+                                <span class="fallback-icon">🧹</span>
+                                <span class="fallback-text">FreshHome Cleaning</span>
+                            </div>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="https://thethirdsite.vercel.app/" target="_blank" class="preview-link" data-en="View Full Site" data-ua="Переглянути сайт">View Full Site →</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category" data-en="Cleaning Service" data-ua="Клінінг">Cleaning Service</div>
+                        <h3 class="project-title" data-en="FreshHome Cleaning" data-ua="FreshHome Cleaning">FreshHome Cleaning</h3>
+                        <p class="project-description" data-en="Multi-page website for cleaning service with modern design and comprehensive service pages." data-ua="Багатосторінковий сайт для клінінгової служби з сучасним дизайном та детальними сторінками послуг.">Multi-page website for cleaning service with modern design and comprehensive service pages.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://thethirdsite.vercel.app/" target="_blank" class="project-link" data-en="View Project" data-ua="Переглянути">View Project</a>
+                            <a href="https://thethirdsite.vercel.app/" target="_blank" class="project-link-icon">→</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title" data-en="Get In Touch" data-ua="Зв'язатись">Get In Touch</h2>
+                <p class="section-subtitle" data-en="I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions." data-ua="Я завжди відкритий для обговорення нових проєктів, креативних ідей або можливостей бути частиною ваших бачень.">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h4 data-en="Email" data-ua="Електронна пошта">Email</h4>
+                            <a href="mailto:rgorb101@gmail.com">rgorb101@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-details">
+                            <h4 data-en="Message" data-ua="Повідомлення">Message</h4>
+                            <span data-en="Available for freelance" data-ua="Доступний для фрілансу">Available for freelance</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4 data-en="Location" data-ua="Локація">Location</h4>
+                            <span data-en="Ukraine" data-ua="Україна">Ukraine</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" data-en="Name" data-ua="Ім'я">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-en="Email" data-ua="Email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-en="Subject" data-ua="Тема">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-en="Message" data-ua="Повідомлення">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-block" data-en="Send Message" data-ua="Відправити повідомлення">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p data-en="© 2024 All rights reserved." data-ua="© 2024 Всі права захищені.">© 2024 All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="mailto:rgorb101@gmail.com" class="social-link" aria-label="Email">EM</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
